@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            border-style: solid;
+            font-size: 50px;
+        }
+
+        #container {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 50px;
+
+        }
+        #button{
+            display: flex; 
+            justify-content: center;
+        }
+
+        button{
+            width: 200px; 
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="box1" class="box"></div>
+        <div id="box2" class="box"></div>
+        <div id="box3" class="box"></div>
+        <div id="box4" class="box"></div>
+        <div id="box5" class="box"></div>
+        <div id="box6" class="box"></div>
+    </div>
+    
+    <div id="button">
+        <button onclick="cekilis()">ÇEKİLİŞ</button>
+    </div>
+
+    <script>
+
+        function cekilis() {
+
+            var sayılar = []
+
+            for (i = 1; i <= 6; i++) {
+                var rastgele = Math.floor(Math.random() * 48) + 1
+
+                if (sayılar.includes(rastgele)) {
+                    i--
+                }
+                else {
+                    document.getElementById("box" + i).innerText = rastgele
+                    sayılar.push(rastgele)
+                }
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
